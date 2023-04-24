@@ -1,0 +1,334 @@
+{
+  "version": "18.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "ImgTransformationStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ImgTransformationStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ImgTransformationStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ImgTransformationStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/74d8f8754f6b45e986a5a6bad13be0b46d679fca6f674ce1729d9c45d0d50c2a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ImgTransformationStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "ImgTransformationStack.assets"
+      ],
+      "metadata": {
+        "/ImgTransformationStack/s3-sample-original-image-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3sampleoriginalimagebucket4852BAD1"
+          }
+        ],
+        "/ImgTransformationStack/s3-sample-original-image-bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3sampleoriginalimagebucketPolicy9E8A6858"
+          }
+        ],
+        "/ImgTransformationStack/s3-sample-original-image-bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3sampleoriginalimagebucketAutoDeleteObjectsCustomResource4643C90D"
+          }
+        ],
+        "/ImgTransformationStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/ImgTransformationStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/ImgTransformationStack/DeployWebsite/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployWebsiteAwsCliLayer17DBC421"
+          }
+        ],
+        "/ImgTransformationStack/DeployWebsite/CustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeployWebsiteCustomResourceD116527B"
+          }
+        ],
+        "/ImgTransformationStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265"
+          }
+        ],
+        "/ImgTransformationStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF"
+          }
+        ],
+        "/ImgTransformationStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536"
+          }
+        ],
+        "/ImgTransformationStack/s3-sample-website-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3samplewebsitebucket187DC458"
+          }
+        ],
+        "/ImgTransformationStack/s3-sample-website-bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3samplewebsitebucketPolicyF987EBE5"
+          }
+        ],
+        "/ImgTransformationStack/s3-sample-website-bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3samplewebsitebucketAutoDeleteObjectsCustomResourceAB6674FF"
+          }
+        ],
+        "/ImgTransformationStack/websiteDeliveryDistribution/Origin1/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "websiteDeliveryDistributionOrigin1S3OriginC6307E67"
+          }
+        ],
+        "/ImgTransformationStack/websiteDeliveryDistribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "websiteDeliveryDistributionFCAA3114"
+          }
+        ],
+        "/ImgTransformationStack/SampleWebsiteDomain": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SampleWebsiteDomain"
+          }
+        ],
+        "/ImgTransformationStack/SampleWebsiteS3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SampleWebsiteS3Bucket"
+          }
+        ],
+        "/ImgTransformationStack/OriginalImagesS3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "OriginalImagesS3Bucket"
+          }
+        ],
+        "/ImgTransformationStack/s3-transformed-image-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3transformedimagebucket6D81D5CB"
+          }
+        ],
+        "/ImgTransformationStack/s3-transformed-image-bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3transformedimagebucketPolicyFB92EE5E"
+          }
+        ],
+        "/ImgTransformationStack/s3-transformed-image-bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3transformedimagebucketAutoDeleteObjectsCustomResource66B8DB81"
+          }
+        ],
+        "/ImgTransformationStack/image-optimization/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageoptimizationServiceRoleB17BF31F"
+          }
+        ],
+        "/ImgTransformationStack/image-optimization/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageoptimization4C49F079"
+          }
+        ],
+        "/ImgTransformationStack/image-optimization/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageoptimizationLogRetentionFAE2ECE2"
+          }
+        ],
+        "/ImgTransformationStack/image-optimization/FunctionUrl/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageoptimizationFunctionUrlB69FA2C7"
+          }
+        ],
+        "/ImgTransformationStack/image-optimization/invoke-function-url": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageoptimizationinvokefunctionurlE8A29AF5"
+          }
+        ],
+        "/ImgTransformationStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB"
+          }
+        ],
+        "/ImgTransformationStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB"
+          }
+        ],
+        "/ImgTransformationStack/LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8a/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A"
+          }
+        ],
+        "/ImgTransformationStack/customResource/MyProvider/framework-onEvent/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customResourceMyProviderframeworkonEventServiceRoleC33AFC6A"
+          }
+        ],
+        "/ImgTransformationStack/customResource/MyProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customResourceMyProviderframeworkonEventServiceRoleDefaultPolicyB8BF2474"
+          }
+        ],
+        "/ImgTransformationStack/customResource/MyProvider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customResourceMyProviderframeworkonEventB3B3EFCC"
+          }
+        ],
+        "/ImgTransformationStack/customResource/MyProvider/framework-onEvent/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customResourceMyProviderframeworkonEventLogRetentionF00436C8"
+          }
+        ],
+        "/ImgTransformationStack/customResource/Resource1/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "customResourceResource14CCAC0E2"
+          }
+        ],
+        "/ImgTransformationStack/SingletonLambdaf7d4f7304ee111e89c2dfa7ae01bbebc/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambdaf7d4f7304ee111e89c2dfa7ae01bbebcServiceRoleFE9ABB04"
+          }
+        ],
+        "/ImgTransformationStack/SingletonLambdaf7d4f7304ee111e89c2dfa7ae01bbebc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambdaf7d4f7304ee111e89c2dfa7ae01bbebc492C6E5C"
+          }
+        ],
+        "/ImgTransformationStack/SingletonLambdaf7d4f7304ee111e89c2dfa7ae01bbebc/LogRetention/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SingletonLambdaf7d4f7304ee111e89c2dfa7ae01bbebcLogRetentionB0B969CA"
+          }
+        ],
+        "/ImgTransformationStack/read-write-bucket-policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "readwritebucketpolicyDCD4CB5F"
+          }
+        ],
+        "/ImgTransformationStack/urlRewrite/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "urlRewriteD6DE1501"
+          }
+        ],
+        "/ImgTransformationStack/ImageCachePolicyc8686f3674591d3fdb088e2d68d00eeeb616bdfdab/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ImageCachePolicyc8686f3674591d3fdb088e2d68d00eeeb616bdfdab46036099"
+          }
+        ],
+        "/ImgTransformationStack/ResponseHeadersPolicyc8686f3674591d3fdb088e2d68d00eeeb616bdfdab/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ResponseHeadersPolicyc8686f3674591d3fdb088e2d68d00eeeb616bdfdab4B9251C7"
+          }
+        ],
+        "/ImgTransformationStack/imageDeliveryDistribution/Origin1/S3Origin/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageDeliveryDistributionOrigin1S3OriginC00A52F5"
+          }
+        ],
+        "/ImgTransformationStack/imageDeliveryDistribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "imageDeliveryDistribution8CA0B45D"
+          }
+        ],
+        "/ImgTransformationStack/ImageDeliveryDomain": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ImageDeliveryDomain"
+          }
+        ],
+        "/ImgTransformationStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ImgTransformationStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/ImgTransformationStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ImgTransformationStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ImgTransformationStack"
+    }
+  }
+}
